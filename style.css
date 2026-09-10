@@ -1,1 +1,291 @@
-/* Estilos do portfólio. */
+/* Base simples, inspirada no azul e nos tons neutros do LinkedIn. */
+:root {
+  --azul: #0a66c2;
+  --azul-escuro: #004182;
+  --fundo: #f3f2ef;
+  --branco: #ffffff;
+  --texto: #242424;
+  --texto-secundario: #595959;
+  --borda: #d8d8d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.container {
+  width: calc(100% - 2rem);
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--azul);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--azul-escuro);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--azul-escuro);
+  outline-offset: 4px;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Disponível ao navegar pelo teclado. */
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  transform: translateY(-200%);
+  border-radius: 4px;
+  background: var(--branco);
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-block: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #eef5fc;
+  text-decoration: underline;
+}
+
+main {
+  padding-block: 1.5rem;
+}
+
+section {
+  width: calc(100% - 2rem);
+  max-width: 1040px;
+  margin: 0 auto 1rem;
+  padding-block: 1.75rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--branco);
+  scroll-margin-top: 1rem;
+}
+
+section > .container {
+  width: calc(100% - 2.5rem);
+}
+
+.hero {
+  border-top: 5px solid var(--azul);
+}
+
+.hero-inner, .sobre-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-texto, .sobre-texto {
+  min-width: 0;
+}
+
+.avatar {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.avatar circle {
+  fill: var(--azul);
+}
+
+.titulo-profissional {
+  margin-top: 0.75rem;
+  color: var(--azul-escuro);
+  font-weight: bold;
+}
+
+.apresentacao {
+  max-width: 65ch;
+  margin-block: 1rem 1.5rem;
+  color: var(--texto-secundario);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: 24px;
+  background: var(--azul);
+  color: var(--branco);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.sobre-foto .avatar {
+  width: 160px;
+  margin-inline: auto;
+}
+
+.legenda-foto {
+  margin-top: 0.75rem;
+  color: var(--texto-secundario);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.sobre-texto {
+  flex: 1;
+}
+
+.bloco-info + .bloco-info {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borda);
+}
+
+.placeholder, .em-construcao p, address {
+  color: var(--texto-secundario);
+}
+
+.selo-sprint {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px dashed #aebdca;
+  border-radius: 4px;
+  background: #eef5fc;
+  color: var(--azul-escuro);
+  font-size: 0.875rem;
+}
+
+address {
+  font-style: normal;
+}
+
+footer {
+  padding-block: 1rem 2rem;
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+/* Tablet e computador: foto e texto passam a ficar lado a lado. */
+@media (min-width: 768px) {
+  main {
+    padding-block: 2rem;
+  }
+
+  section {
+    padding-block: 2rem;
+  }
+
+  section > .container {
+    width: calc(100% - 4rem);
+  }
+
+  .hero-inner, .sobre-inner {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .hero-inner {
+    align-items: center;
+  }
+
+  .hero .avatar {
+    width: 160px;
+  }
+
+  .sobre-foto {
+    flex: 0 0 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
