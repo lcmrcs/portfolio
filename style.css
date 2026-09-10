@@ -227,8 +227,10 @@ section > .container {
   flex-shrink: 0;
 }
 
-.avatar circle {
-  fill: var(--azul);
+.avatar {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .titulo-profissional {
