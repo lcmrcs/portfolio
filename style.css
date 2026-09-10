@@ -105,12 +105,71 @@ header {
   text-decoration: none;
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid var(--azul-escuro);
+  outline-offset: 2px;
+}
+
+.menu-toggle-linha {
+  width: 24px;
+  height: 2px;
+  background: var(--texto);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Vira um "X" quando o menu está aberto. */
+.menu-toggle[aria-expanded="true"] .menu-toggle-linha:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-linha:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-linha:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* No mobile, o menu fica recolhido até o botão ser clicado. */
+nav#menu-principal {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+nav#menu-principal.aberto {
+  max-height: 320px;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 0.5rem;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0 0;
   list-style: none;
 }
 
@@ -287,5 +346,18 @@ footer {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  nav#menu-principal {
+    max-height: none;
+    overflow: visible;
+  }
+
+  nav ul {
+    padding-top: 0;
   }
 }

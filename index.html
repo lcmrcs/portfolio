@@ -13,8 +13,22 @@
 
 <header>
   <div class="container header-inner">
-    <a class="logo" href="#inicio">Luis Alberto Pires de Oliveira</a>
-    <nav aria-label="Menu principal">
+    <div class="header-top">
+      <a class="logo" href="#inicio">Luis Alberto Pires de Oliveira</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        aria-label="Abrir menu"
+      >
+        <span class="menu-toggle-linha"></span>
+        <span class="menu-toggle-linha"></span>
+        <span class="menu-toggle-linha"></span>
+      </button>
+    </div>
+    <nav aria-label="Menu principal" id="menu-principal">
       <ul>
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
