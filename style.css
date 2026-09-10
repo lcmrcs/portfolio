@@ -361,3 +361,21 @@ footer {
     padding-top: 0;
   }
 }
+
+/* Espaçamento para os textos e cases completos. */
+.bloco-info p + p {
+  margin-top: 0.75rem;
+}
+
+.bloco-info h4 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.bloco-info ul {
+  padding-left: 1.5rem;
+}
+
+.bloco-info li + li {
+  margin-top: 0.5rem;
+}
