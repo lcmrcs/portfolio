@@ -22,3 +22,9 @@ escuro e menu no celular.
 
 Também inclui favicon, navegação responsiva, animações discretas e respeito à
 preferência do sistema por redução de movimento.
+
+## Site publicado
+
+https://lcmrcs.github.io/portfolio/
+
+Publicado pelo GitHub Pages a partir da raiz da branch `main`.

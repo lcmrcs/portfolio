@@ -80,6 +80,8 @@ a { color: inherit; }
 .skip-link:focus { top: 1rem; }
 
 .cabecalho {
+  position: relative;
+  z-index: 5;
   min-height: 4.75rem;
   display: flex;
   align-items: center;
